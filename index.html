@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TimeTable Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="brand" href="index.html">
+          <span class="brand__logo" aria-hidden="true">E</span>
+          <span class="brand__name">TimeTable</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html" class="nav__link is-active">Home</a>
+<a href="about.html" class="nav__link">About</a>
+          <a href="services.html" class="nav__link">Services</a>
+          <a href="school.html" class="nav__link">School</a>
+          <a href="contact.html" class="nav__link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <h1>Create Your Timetable</h1>
+            <p>Easily create your custom timetable with our intuitive tool.</p>
+            <button id="get-started-btn" class="btn btn-primary" type="button">Get Started</button>
+          </div>
+          <div class="hero__visual">
+            <div class="card timetable-card">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="sample-block sample-a"></span></td>
+                    <td></td>
+                    <td><span class="sample-block sample-b"></span></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="sample-block sample-b"></span></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="sample-block sample-c"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chat + Results -->
+      <section id="chat-section" class="section">
+        <div class="container app">
+          <section class="card pad chat" aria-label="Chat interface">
+            <div id="messages" class="chat__messages" aria-live="polite"></div>
+            <form id="chat-form" class="chat__form" autocomplete="off">
+              <input id="user-input" class="chat__input" type="text" placeholder="Type your reply and press Enter..." aria-label="Your message" />
+              <button id="send-btn" class="chat__send" type="submit">Send</button>
+            </form>
+          </section>
+
+          <section class="card pad results" aria-label="Generated timetable">
+            <div id="summary" class="results__summary"></div>
+            <div id="timetable" class="results__table"></div>
+          </section>
+        </div>
+      </section>
+
+      <!-- How it Works -->
+      <section class="section">
+        <div class="container">
+          <h2>How it Works</h2>
+          <div class="hiw__grid">
+            <div class="step">
+              <div class="step__icon">👤</div>
+              <div class="step__title">Sign Up</div>
+              <div class="step__desc">No account required for this demo.</div>
+            </div>
+            <div class="step">
+              <div class="step__icon">🗂️</div>
+              <div class="step__title">Create</div>
+              <div class="step__desc">Answer the chat prompts with your preferences.</div>
+            </div>
+            <div class="step">
+              <div class="step__icon">📅</div>
+              <div class="step__title">Schedule</div>
+              <div class="step__desc">Generate a balanced timetable instantly.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer__inner">
+        <small>Local-first demo. No data leaves your browser.</small>
+        <button id="restart-btn" class="restart" type="button" title="Restart conversation">Restart</button>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

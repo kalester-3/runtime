@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>School • TimeTable</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header__inner">
+        <a class="brand" href="index.html">
+          <span class="brand__logo" aria-hidden="true">E</span>
+          <span class="brand__name">TimeTable</span>
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html" class="nav__link">Home</a>
+          <a href="about.html" class="nav__link">About</a>
+          <a href="services.html" class="nav__link">Services</a>
+          <a href="school.html" class="nav__link is-active">School</a>
+          <a href="contact.html" class="nav__link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="section">
+      <div class="container">
+        <div class="app" style="grid-template-columns: 1.1fr 0.9fr;">
+          <!-- Builder -->
+          <section class="card pad" aria-label="School Builder">
+            <h1>Whole School Scheduler</h1>
+            <p class="subtitle" style="color:var(--muted)">Define classes, subjects, teachers, and rooms. Then generate a conflict‑free timetable across all classes.</p>
+
+            <div class="card pad" style="margin:12px 0;">
+              <label for="school-days"><strong>Days</strong></label>
+              <input id="school-days" class="chat__input" value="Monday, Tuesday, Wednesday, Thursday, Friday" />
+              <div style="height:8px"></div>
+              <label for="school-periods"><strong>Periods per day</strong></label>
+              <input id="school-periods" class="chat__input" type="number" value="6" min="1" />
+              <div style="height:8px"></div>
+              <label for="school-max"><strong>Max per subject per day</strong> (<em>number</em> or <code>auto</code>)</label>
+              <input id="school-max" class="chat__input" value="auto" />
+            </div>
+
+            <div id="classes-container"></div>
+
+            <div class="card pad" style="margin:12px 0;">
+              <h3 style="margin-top:0">Teacher Availability (optional)</h3>
+              <p class="subtitle">Paste JSON describing teachers and their available periods per day. Periods are 1-indexed. Example button inserts a sample. Or use the grid builder to define availability visually.</p>
+              <textarea id="teacher-availability" class="chat__input" style="min-height:120px"></textarea>
+              <div style="display:flex; gap:8px; margin-top:8px; flex-wrap: wrap;">
+                <button id="insert-availability-example" class="btn btn-secondary" type="button">Insert Example</button>
+                <button id="add-teacher-grid" class="btn btn-secondary" type="button">Add Teacher (grid)</button>
+              </div>
+              <div id="teacher-grid-container"></div>
+            </div>
+
+            <div class="card pad" style="margin:12px 0;">
+              <h3 style="margin-top:0">Rooms (optional)</h3>
+              <p class="subtitle">Provide a list of rooms (comma or newline separated). If a subject has no room set, the scheduler will auto-assign a free room from this list.</p>
+              <textarea id="rooms-list" class="chat__input" style="min-height:80px" placeholder="R101, R102, Lab-1"></textarea>
+            </div>
+
+            <div style="display:flex; gap:8px; margin-top:12px; flex-wrap:wrap;">
+              <button id="add-class" class="btn btn-secondary" type="button">Add Class</button>
+              <button id="generate-school" class="btn btn-primary" type="button">Generate for School</button>
+              <button id="export-csv" class="btn btn-secondary" type="button">Export CSV</button>
+              <button id="print-results" class="btn btn-secondary" type="button">Print</button>
+            </div>
+          </section>
+
+          <!-- Results -->
+          <section class="card pad" aria-label="Results">
+            <div id="school-results" class="results__table"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer__inner">
+        <small>Local-first demo. No data leaves your browser.</small>
+        <a class="btn btn-secondary" href="index.html">Back Home</a>
+      </div>
+    </footer>
+
+    <script src="school.js"></script>
+  </body>
+</html>
